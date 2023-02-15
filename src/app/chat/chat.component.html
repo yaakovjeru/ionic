@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>Back Button</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<section class="msger">
+    <header class="msger-header">
+      <div class="msger-header-title">כלי פנוי להשכרה</div>
+      <div class="msger-header-options">
+        <span><i class="fas fa-cog"></i></span>
+      </div>
+    </header>
+  
+    <main class="msger-chat">
+        <div class="msg left-msg" *ngFor="let item of chatData">
+            <div class="msg-img" style="background-image: url(https://image.flaticon.com/icons/svg/327/327779.svg)"></div>
+            <div class="msg-bubble">
+                <div class="msg-info">
+                    <div class="msg-info-name">{{item.name}}</div>
+                    <div class="msg-info-time">{{item.date}}</div>
+                </div>
+                <div class="msg-text">{{item.content}} 😄</div>
+                <div class="msg-info">
+                    <div class="msg-info-name">{{item.address}}</div>
+                    <div class="msg-info-time">{{item.phone}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="msg right-msg">
+            <div class="msg-img" style="background-image: url(https://image.flaticon.com/icons/svg/145/145867.svg)"></div>
+            <div class="msg-bubble">
+                <div class="msg-info">
+                    <div class="msg-info-name">Sajad</div>
+                    <div class="msg-info-time">12:46</div>
+                </div>
+                <div class="msg-text">
+                    You can change your name in JS section!
+                </div>
+            </div>
+        </div>
+    </main>
+  
+    <div class="msger-inputarea">
+        <button type="submit" class="msger-send-btn" (click)="chatForm =! chatForm" *ngIf="!chatForm">הוסף הודעה</button>
+    </div>
+
+    <div class="msger-inputarea" *ngIf="chatForm">
+        <input type="text" class="msger-input" placeholder="שם מלא">
+        <input type="text" class="msger-input" placeholder="טלפון להתקשרות">
+        <input type="text" class="msger-input" placeholder="מיקום הכלי">
+        <input type="text" class="msger-input min300" placeholder="תוכן ההודעה">
+        <button type="submit" class="msger-send-btn">שליחת הודעה</button>
+        <button type="submit" class="" (click)="chatForm =! chatForm">סגירה</button>
+    </div>
+  </section>

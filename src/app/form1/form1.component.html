@@ -1,0 +1,156 @@
+
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>Back Button</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="main-content">
+<div class="container">
+
+    <div class="row">
+        <div class="col-12">
+          <ul>
+            <li>
+                <a routerLink="/form1">form1</a>
+            </li>
+            <li>
+                <a routerLink="/form2">form2</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    <div class="row">
+        <div class="col-3 area_select">
+            <h2>סינון לפי אזור</h2>
+            <mat-form-field>
+                <mat-label>בחירת אזור</mat-label>
+                <mat-select  #select multiple [formControl]="toppings">
+                    <!-- <mat-select-trigger>
+                        {{toppings.value?.[0] || ''}}
+                        <span *ngIf="(toppings.value?.length || 0) > 1" class="example-additional-selection">
+                        (+{{(toppings.value?.length || 0) - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+                        </span>
+                    </mat-select-trigger> -->
+                    <mat-optgroup class="area_select" label="north">
+                        <div class="select-all">
+                            <mat-checkbox [(ngModel)]="formData.allSelected" (change)="toggleAllSelection($event, 'north'); allSelected = !allSelected">צפון</mat-checkbox>
+                        </div>
+                        <mat-option (click)="optionClick()" *ngFor="let food of foods" [value]="food.value">
+                            {{food.viewValue}}
+                        </mat-option>
+                    </mat-optgroup>
+                    <mat-optgroup class="area_select" label="south">
+                        <div class="select-all">
+                            <mat-checkbox [(ngModel)]="formData.allSelected2" (change)="toggleAllSelection($event, 'south'); allSelected = !allSelected">דרום</mat-checkbox>
+                        </div>
+                        <mat-option (click)="optionClick()" *ngFor="let food of foods" [value]="food.value">
+                            {{food.viewValue}}
+                        </mat-option>
+                    </mat-optgroup>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-9">
+            <!-- <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" class="form-control" formControlName="name">
+                    <div class="help-block" *ngIf="!userForm.get('name').valid 
+                        && userForm.get('name').touched">
+                        <span *ngIf="userForm.get('name').errors['required']">
+                            Name is required.
+                        </span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="name">Email</label>
+                    <input type="text" name="email" class="form-control" formControlName="email">
+                    <div class="help-block" *ngIf="!userForm.get('email').valid 
+                      && userForm.get('email').touched">
+                        <span *ngIf="userForm.get('email').errors['required']">
+                            Email is required.
+                        </span>
+                        <span *ngIf="userForm.get('email').errors['email']">
+                            Enter a valid email.
+                        </span>
+                    </div>
+                </div>
+                <div formArrayName="hobbies">
+                    <div *ngFor="let hobby of controls; let i = index" [formGroupName]="i">
+                        <div class="mb-2">
+                            <input type="text" name="name" class="form-control" formControlName="name">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn btn-sm btn-primary" type="button" (click)="addHobby()">Add Hobby</button>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+                <div *ngFor="let item of errorMessage">
+                    {{item.control}} - {{item.error}}
+                </div>
+            </form> -->
+            
+            <mat-vertical-stepper [linear]="true" #stepper animationDuration="500" editable="true">
+                <mat-step [stepControl]="firstFormGroup">
+                  <form [formGroup]="firstFormGroup">
+                    <ng-template matStepLabel>Fill out your name</ng-template>
+                    <mat-form-field appearance="outline">
+                      <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                    </mat-form-field>
+                    <div>
+                      <button mat-button matStepperNext>הבא</button>
+                    </div>
+                  </form>
+                </mat-step>
+                <mat-step [stepControl]="secondFormGroup">
+                  <form [formGroup]="secondFormGroup">
+                    <ng-template matStepLabel>Fill out your address</ng-template>
+                    <mat-form-field appearance="outline">
+                      <input matInput placeholder="Address" formControlName="secondCtrl" required>
+                    </mat-form-field>
+                    <div>
+                      <button mat-button matStepperPrevious>הקודם</button>
+                      <button mat-button matStepperNext>הבא</button>
+                    </div>
+                  </form>
+                </mat-step>
+                <mat-step>
+                  <ng-template matStepLabel>Done</ng-template>
+                  You are now done.
+                  <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button (click)="stepper.reset()">Reset</button>
+                  </div>
+                </mat-step>
+              </mat-vertical-stepper>
+            
+              <!-- <mat-form-field appearance="fill">
+                <mat-label>Toppings</mat-label>
+                <mat-select [formControl]="toppings" multiple>
+                    <mat-optgroup label="צפון">
+                        <button mat-button (click)="selectAll('itemSelect')"> הכל</button>
+                        <mat-option value="בחר הכל">בחר הכל</mat-option>
+                        <div class="select-all">
+                            <mat-checkbox [(ngModel)]="allSelected"
+                                            [ngModelOptions]="{standalone: true}"
+                                            (change)="toggleAllSelection()">Select All</mat-checkbox>
+                        </div>
+                        <mat-option *ngFor="let topping of toppingList" [value]="topping">
+                            {{topping}}
+                        </mat-option>
+                    </mat-optgroup>
+                </mat-select>
+              </mat-form-field> -->
+        </div>
+    </div>
+  </div>
+
+</div>
