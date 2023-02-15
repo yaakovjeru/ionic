@@ -1,0 +1,487 @@
+@import '//fonts.googleapis.com/icon?family=Material+Icons';
+// @import '//fonts.googleapis.com/css?family=Merriweather+Sans:400,700italic';
+@import '//fonts.googleapis.com/earlyaccess/opensanshebrew.css';
+
+// *:focus{
+//     outline: none;
+//     border: 3px dotted orange;
+// }
+.material-icons.md-32 {
+    font-size: 32px;
+}
+
+body.accessible-readable * {
+    font-family: Arial, sans-serif!important;
+
+    .material-icons {
+        font-family: 'Material Icons'!important;
+    }
+}
+
+body.accessible-focus-blue button:focus,
+body.accessible-focus-blue input[type="button"]:focus,
+body.accessible-focus-blue input[type="reset"]:focus,
+body.accessible-focus-blue input[type="submit"]:focus,
+body.accessible-focus-blue input[type="text"]:focus,
+body.accessible-focus-blue input[type="email"]:focus,
+body.accessible-focus-blue input[type="url"]:focus,
+body.accessible-focus-blue input[type="password"]:focus,
+body.accessible-focus-blue input[type="search"]:focus,
+body.accessible-focus-blue input[type="tel"]:focus,
+body.accessible-focus-blue input[type="number"]:focus,
+body.accessible-focus-blue textarea:focus,
+body.accessible-focus-blue *:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+body.accessible-focus-red button:focus,
+body.accessible-focus-red input[type="button"]:focus,
+body.accessible-focus-red input[type="reset"]:focus,
+body.accessible-focus-red input[type="submit"]:focus,
+body.accessible-focus-red input[type="text"]:focus,
+body.accessible-focus-red input[type="email"]:focus,
+body.accessible-focus-red input[type="url"]:focus,
+body.accessible-focus-red input[type="password"]:focus,
+body.accessible-focus-red input[type="search"]:focus,
+body.accessible-focus-red input[type="tel"]:focus,
+body.accessible-focus-red input[type="number"]:focus,
+body.accessible-focus-red textarea:focus,
+body.accessible-focus-red *:focus {
+    outline: thin dotted;
+    outline: 2px solid red;
+    outline-offset: -2px;
+}
+
+#accessible-toolbar-close {
+    appearance: normal;
+    -webkit-appearance: none;
+    padding: 0;
+    background-color: transparent!important;
+    color: #6d6d6d!important;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    border: 0;
+    &:hover, &:focus {
+        outline: none;
+        color: #fff!important;
+        -webkit-transition: all 100ms ease;
+        -moz-transition: all 100ms ease;
+        -ms-transition: all 100ms ease;
+        transition: all 100ms ease;
+        i {
+            color: #fff!important;
+        }
+    }
+    i {
+        background-color: transparent!important;
+        color: #fff!important;
+    }
+}
+
+#accessible-toggle-toolbar {
+    background-color: #1e8a6d!important;
+    color: white!important;
+    cursor: pointer;
+    position: fixed;
+    z-index: 100000;
+    top: 120px;
+    right: 0px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    width: 70px;
+    height: 70px;
+    border: 5px solid white;
+    -webkit-border-radius: 50% 0 0 50%;
+    -moz-border-radius: 50% 0 0 50%;
+    -ms-border-radius: 50% 0 0 50%;
+    border-radius: 50% 0 0 50%;
+    -webkit-box-shadow: 0 0 24px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0 24px rgba(0, 0, 0, 0.75);
+    -ms-box-shadow: 0 0 24px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.75);
+    -webkit-transition: top 600ms ease-out 300ms;
+    -moz-transition: top 600ms ease-out 300ms;
+    -ms-transition: top 600ms ease-out 300ms;
+    transition: top 600ms ease-out 300ms;
+    border-right: 0;
+
+    &:hover, &:focus {
+        outline: none;
+       border: 5px solid #ffc71c;
+       border-style: dashed;
+       border-right: 0;
+   }
+}
+
+body.accessible-readable #accessible-toolbar,
+body.accessible-marklinks #accessible-toolbar,
+body.accessible-dark #accessible-toolbar,
+body.accessible-bright #accessible-toolbar,
+#accessible-toolbar {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 310px;
+    overflow: hidden;
+    background-color: white!important;
+    border: 1px solid #999;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: 0 0 24px black;
+    -moz-box-shadow: 0 0 24px black;
+    -ms-box-shadow: 0 0 24px black;
+    box-shadow: 0 0 24px black;
+}
+
+body.accessible-readable #accessible-toolbar .accessible-author,
+body.accessible-marklinks #accessible-toolbar .accessible-author,
+body.accessible-dark #accessible-toolbar .accessible-author,
+body.accessible-bright #accessible-toolbar .accessible-author,
+#accessible-toolbar .accessible-author {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    font-size: 13px;
+    height: 32px;
+    line-height: 32px;
+    border-top: 1px solid #999;
+    font-weight: 400;
+    background-color: #274690!important;
+}
+
+body.accessible-readable #accessible-toolbar .accessible-author a,
+body.accessible-marklinks #accessible-toolbar .accessible-author a,
+body.accessible-dark #accessible-toolbar .accessible-author a,
+body.accessible-bright #accessible-toolbar .accessible-author a,
+#accessible-toolbar .accessible-author a {
+    color: white!important;
+    background-color: #274690!important;
+}
+
+.rtl body.accessible-readable #accessible-toolbar,
+.rtl body.accessible-marklinks #accessible-toolbar,
+.rtl body.accessible-dark #accessible-toolbar,
+.rtl body.accessible-bright #accessible-toolbar,
+.rtl #accessible-toolbar {
+    left: auto;
+    right: 30px;
+}
+
+#accessible-toolbar>div {
+    background-color: white!important;
+}
+
+#accessible-toolbar-title {
+    background-color: #1e8a6d!important;
+    text-align: center;
+    margin: 0px 0 5px;
+    font-weight: 700;
+    font-style: italic;
+    padding: 10px;
+    color: #fff !important;
+}
+
+#accessible-toolbar-extra {
+    padding: 4px;
+    position: absolute;
+    bottom: 32px;
+    right: 0;
+    left: 0;
+
+    a {
+        display: block;
+        background-color: #5d74ac!important;
+        color: white!important;
+        height: 38px;
+        line-height: 40px;
+        font-weight: 400;
+        font-size: 13px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        border-radius: 3px;
+        -webkit-transition: all 100ms ease;
+        -moz-transition: all 100ms ease;
+        -ms-transition: all 100ms ease;
+        transition: all 100ms ease;
+        overflow: hidden;
+
+        &:hover, &:focus {
+            background-color: #1c3268!important;
+            color: white!important;
+            i {
+                color: white!important;
+                background-color: #5d74ac!important;
+            }
+        }
+
+        &:first-child {
+            margin-bottom: 4px;
+        }
+    
+        i {
+            float: left;
+            margin-right: 10px;
+            line-height: 38px;
+            width: 40px;
+            text-align: center;
+            background-color: #1c3268!important;
+            -webkit-transition: all 100ms ease;
+            -moz-transition: all 100ms ease;
+            -ms-transition: all 100ms ease;
+            transition: all 100ms ease;
+        }
+    }
+}
+
+.rtl #accessible-toolbar-extra a i {
+    float: right;
+    margin-left: 10px;
+    margin-right: auto;
+}
+
+body.accessible-readable .accessible-toolbar-label,
+body.accessible-marklinks .accessible-toolbar-label,
+body.accessible-dark .accessible-toolbar-label,
+body.accessible-bright .accessible-toolbar-label,
+.accessible-toolbar-label {
+    display: block;
+    text-align: center;
+    margin: 5px 0;
+    font-weight: 400;
+    background-color: white!important;
+    color: #404040!important;
+}
+
+.accessible-toolbar-btn-group {
+    display: flex;
+    padding: 2px;
+        border-bottom: 1px solid #eee;
+}
+
+body.accessible-readable .accessible-toolbar-btn,
+body.accessible-marklinks .accessible-toolbar-btn,
+body.accessible-dark .accessible-toolbar-btn,
+body.accessible-bright .accessible-toolbar-btn,
+.accessible-toolbar-btn {
+    width: 33%;
+    flex-grow: 1;
+    text-transform: none;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.681;
+    margin: 2px;
+    padding: 5px;
+    text-align: center;
+    color: #1a2440!important;
+    background-color: #ffffff!important;
+    border: 1px solid #fff;
+}
+
+body.accessible-readable .accessible-toolbar-btn i,
+body.accessible-marklinks .accessible-toolbar-btn i,
+body.accessible-dark .accessible-toolbar-btn i,
+body.accessible-bright .accessible-toolbar-btn i,
+.accessible-toolbar-btn i {
+    line-height: 36px;
+    height: 36px;
+    color: #1a2440!important;
+    font-size: 40px;
+}
+
+body.accessible-readable .accessible-toolbar-btn span,
+body.accessible-marklinks .accessible-toolbar-btn span,
+body.accessible-dark .accessible-toolbar-btn span,
+body.accessible-bright .accessible-toolbar-btn span,
+.accessible-toolbar-btn span {
+    display: block;
+    margin-bottom: 4px;
+    color: white!important;
+}
+
+body.accessible-readable .accessible-toolbar-btn.accessible-active,
+body.accessible-readable .accessible-toolbar-btn:hover,
+body.accessible-readable .accessible-toolbar-btn:focus,
+body.accessible-marklinks .accessible-toolbar-btn.accessible-active,
+body.accessible-marklinks .accessible-toolbar-btn:hover,
+body.accessible-marklinks .accessible-toolbar-btn:focus,
+body.accessible-dark .accessible-toolbar-btn.accessible-active,
+body.accessible-dark .accessible-toolbar-btn:hover,
+body.accessible-dark .accessible-toolbar-btn:focus,
+body.accessible-bright .accessible-toolbar-btn.accessible-active,
+body.accessible-bright .accessible-toolbar-btn:hover,
+body.accessible-bright .accessible-toolbar-btn:focus,
+.accessible-toolbar-btn.accessible-active,
+.accessible-toolbar-btn:hover,
+.accessible-toolbar-btn:focus {
+    background-color: #ddeeff !important;
+    border: 1px solid #c0defd;
+}
+
+body.accessible-readable .accessible-toolbar-btn.accessible-btn-reset,
+body.accessible-marklinks .accessible-toolbar-btn.accessible-btn-reset,
+body.accessible-dark .accessible-toolbar-btn.accessible-btn-reset,
+body.accessible-bright .accessible-toolbar-btn.accessible-btn-reset,
+.accessible-toolbar-btn.accessible-btn-reset {
+    display: none;
+}
+
+.rtl body.accessible-readable .accessible-toolbar-btn,
+body.accessible-readable.rtl body.accessible-readable .accessible-toolbar-btn,
+.rtl body.accessible-marklinks .accessible-toolbar-btn,
+body.accessible-readable.rtl body.accessible-marklinks .accessible-toolbar-btn,
+.rtl body.accessible-dark .accessible-toolbar-btn,
+body.accessible-readable.rtl body.accessible-dark .accessible-toolbar-btn,
+.rtl body.accessible-bright .accessible-toolbar-btn,
+body.accessible-readable.rtl body.accessible-bright .accessible-toolbar-btn,
+.rtl .accessible-toolbar-btn,
+body.accessible-readable.rtl .accessible-toolbar-btn {
+    font-size: 16px;
+}
+/*
+.accessible-toolbar-btn[disabled],
+.accessible-toolbar-btn[disabled]:hover,
+.accessible-toolbar-btn[disabled]:focus {
+    text-transform: none;
+    font-weight: 400;
+    line-height: 1.681;
+    letter-spacing: normal;
+    background-color: #6d6d6d!important;
+    opacity: 1;
+    padding: 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    border-bottom: 4px solid #404040;
+    font-family: 'Merriweather Sans', sans-serif!important;
+}
+*/
+/*
+.accessible-toolbar-btn[disabled] i,
+.accessible-toolbar-btn[disabled] span,
+.accessible-toolbar-btn[disabled]:hover i,
+.accessible-toolbar-btn[disabled]:hover span,
+.accessible-toolbar-btn[disabled]:focus i,
+.accessible-toolbar-btn[disabled]:focus span {
+    background-color: #6d6d6d!important;
+}*/
+
+body.accessible-dark, body.accessible-dark *  {
+    background-color: black!important;
+    color: white!important;
+    a {
+        color: yellow!important;
+    }
+    .material-icons {
+        // color: !important;
+        background-color: transparent!important;
+    }
+}
+
+body.accessible-dark::-webkit-input-placeholder, body.accessible-dark::-moz-placeholder, body.accessible-dark:-ms-input-placeholder, body.accessible-dark input:-moz-placeholder {
+    color: #eee;
+}
+
+body.accessible-dark input {
+    border: 1px solid white;
+}
+
+body.accessible-bright, body.accessible-bright * {
+    background-color: white!important;
+    color: black!important;
+    a {
+        color: blue!important;
+    }
+}
+
+body.accessible-bright .material-icons {
+    color: white!important;
+    background-color: transparent!important;
+}
+
+body.accessible-bright::-webkit-input-placeholder, body.accessible-bright::-moz-placeholder, body.accessible-bright:-ms-input-placeholder, body.accessible-bright input:-moz-placeholder {
+    color: #333;
+}
+
+body.accessible-bright input {
+    border: 1px solid black;
+}
+
+body.accessible-animation * {
+    transition: none!important;
+    -o-transition: none!important;
+    -ms-transition: none!important;
+    -moz-transition: none!important;
+    -webkit-transition: none!important;
+}
+
+body.accessible-underline a,
+body.accessible-underline button {
+    text-decoration: underline!important;
+}
+
+body.accessible-marklinks a,
+body.accessible-marklinks button {
+    background-color: yellow!important;
+    color: black!important;
+}
+
+.accessible-toolbar-btn:first-child {
+    border-left: 1px solid #eee;
+}
+
+@media (min-width: 320px) and (max-height: 830px) {
+    body.accessible-readable .accessible-toolbar-btn,
+    body.accessible-marklinks .accessible-toolbar-btn,
+    body.accessible-dark .accessible-toolbar-btn,
+    body.accessible-bright .accessible-toolbar-btn,
+    .accessible-toolbar-btn {
+        padding: 2px;
+        line-height: 1.21;
+    }
+}
+
+@media (min-width: 320px) and (max-height: 768px) {
+    body.accessible-readable .accessible-toolbar-btn,
+    body.accessible-marklinks .accessible-toolbar-btn,
+    body.accessible-dark .accessible-toolbar-btn,
+    body.accessible-bright .accessible-toolbar-btn,
+    .accessible-toolbar-btn {
+        padding: 2px;
+        line-height: 1.21;
+    }
+    .rtl body.accessible-readable .accessible-toolbar-btn,
+    body.accessible-readable.rtl body.accessible-readable .accessible-toolbar-btn,
+    .rtl body.accessible-marklinks .accessible-toolbar-btn,
+    body.accessible-readable.rtl body.accessible-marklinks .accessible-toolbar-btn,
+    .rtl body.accessible-dark .accessible-toolbar-btn,
+    body.accessible-readable.rtl body.accessible-dark .accessible-toolbar-btn,
+    .rtl body.accessible-bright .accessible-toolbar-btn,
+    body.accessible-readable.rtl body.accessible-bright .accessible-toolbar-btn,
+    .rtl .accessible-toolbar-btn,
+    body.accessible-readable.rtl .accessible-toolbar-btn {
+        font-size: 14px;
+    }
+    body.accessible-readable .accessible-toolbar-label,
+    body.accessible-marklinks .accessible-toolbar-label,
+    body.accessible-dark .accessible-toolbar-label,
+    body.accessible-bright .accessible-toolbar-label,
+    .accessible-toolbar-label {
+        margin: 3px 0 2px;
+    }
+}

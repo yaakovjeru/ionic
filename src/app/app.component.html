@@ -1,3 +1,29 @@
 <ion-app>
   <ion-router-outlet [animation]="myCustomPageTransition"></ion-router-outlet>
-</ion-app> 
+</ion-app>
+
+<nav class="accessible-toolbar-wrap">
+  <button id="accessible-toggle-toolbar" aria-label="הצגה או הסתרה של סרגל הנגישות" (click)="show_accessible =! show_accessible" *ngIf="!show_accessible"><i class="material-icons md-32">accessibility</i></button>
+  <div id="accessible-toolbar" *ngIf="show_accessible">
+      <button id="accessible-toolbar-close" aria-label="סגירת סרגל הנגישות" (click)="show_accessible =! show_accessible"><i class="material-icons">highlight_off</i></button>
+      <h3 id="accessible-toolbar-title">סרגל נגישות</h3>
+      <div id="accessible-toolbar-textsize" class="accessible-toolbar-btn-group">
+          <button id="accessible-text-down" class="accessible-toolbar-btn" (click)="fontSizeChange('increase')"><span><i class="material-icons">zoom_out</i></span>הקטנת גופן</button>
+          <button id="accessible-text-up" class="accessible-toolbar-btn" (click)="fontSizeChange('decrease')"><span><i class="material-icons">zoom_in</i></span>הגדלת גופן</button>
+          <!--<button id="accessible-text-reset" class="accessible-toolbar-btn accessible-btn-reset"><span><i class="material-icons">autorenew</i></span>בחזרה למקור</button>-->
+      </div>
+      <div id="accessible-toolbar-contrast" class="accessible-toolbar-btn-group">
+          <button id="accessible-contrast-dark" class="accessible-toolbar-btn" (click)="accessibleToggle('dark')"><span><i class="material-icons">brightness_low</i></span>ניגודיות כהה</button>
+          <button id="accessible-contrast-bright" class="accessible-toolbar-btn" (click)="accessibleToggle('bright')"><span><i class="material-icons">brightness_high</i></span>ניגודיות בהירה</button>
+          <!-- <button id="accessible-contrast-reset" class="accessible-toolbar-btn accessible-btn-reset" (click)="resetBrightness()"><span><i class="material-icons">autorenew</i></span>בחזרה למקור</button> -->
+      </div>
+      <div id="accessible-toolbar-links" class="accessible-toolbar-btn-group">
+          <button id="accessible-links-marklinks" class="accessible-toolbar-btn" (click)="accessibleToggle('marklinks')"><span><i class="material-icons">format_paint</i></span>הדגשת קישורים</button>
+          <button id="accessible-links-underline" class="accessible-toolbar-btn" (click)="accessibleToggle('underline')"><span><i class="material-icons">format_underlined</i></span>קו תחתון לקישורים</button>
+      </div>
+      <div id="accessible-toolbar-font" class="accessible-toolbar-btn-group">
+          <button id="accessible-font-readable" class="accessible-toolbar-btn" (click)="accessibleToggle('readable')"><span><i class="material-icons">text_format</i></span>גופן קריא</button>
+          <button id="accessible-animation" class="accessible-toolbar-btn" (click)="accessibleToggle('animation')"><span><i class="material-icons">local_movies</i></span>ביטול אנימציות</button>
+      </div>
+  </div>
+</nav>

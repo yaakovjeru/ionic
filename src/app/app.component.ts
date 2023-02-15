@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormControl, FormArray, Validators, FormGroup} from "@angular/forms";
 import { AnimationController, Platform } from '@ionic/angular';
 import { RouterOutlet } from '@angular/router';
@@ -11,7 +11,9 @@ import { RouterOutlet } from '@angular/router';
 
 export class AppComponent implements OnInit{
     public userForm:any;
-    
+    show_accessible:boolean = false;
+    fontSize = 16;
+
     myCustomPageTransition = ((baseEl: any, opts?: any) => { 
 
         const DURATION = 400;
@@ -103,7 +105,7 @@ export class AppComponent implements OnInit{
     
     constructor(
         private formBuilder: FormBuilder,
-        private animationCtrl: AnimationController
+        private animationCtrl: AnimationController,
     ){}
     
     ngOnInit() {
@@ -137,6 +139,23 @@ export class AppComponent implements OnInit{
 
     onSubmit() {
         console.log(this.userForm.value);
+    }
+
+    fontSizeChange(type:string) {
+        this.fontSize = (type == 'increase' ? (this.fontSize - 1) : (this.fontSize + 1));
+        var post = document.querySelectorAll<HTMLElement>('p, a, span, h1, h2, h3, h4, h5, h6, small, input, button');
+        for (let i = 0; i < post.length; i++) {
+            post[i].style.fontSize = this.fontSize + 'px';
+        }
+    }
+
+    accessibleToggle(name:string){
+        document.body.classList.toggle("accessible-"+name);
+        if(name == 'dark'){
+            document.body.classList.remove("accessible-bright");
+        }else if(name == 'bright'){
+            document.body.classList.remove("accessible-dark");
+        }
     }
  
 }
