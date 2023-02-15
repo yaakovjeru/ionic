@@ -100,7 +100,6 @@ export class AppComponent implements OnInit{
             //     .addAnimation([anim4, anim5]);
             // return anim6;
           }
-    
     });
     
     constructor(
